@@ -1,3 +1,10 @@
+"""
+Most Of The Code Is Self-Explanatory, But If You Need More Info, Please Read The Docstrings
+Most Of The Code Is Cloned From The Encrypt Function, But With A Negative Key To Decrypt
+Most Of The Code Is Cloned From The Algorithms Github Repo, But With The SearchString Function Added
+To Search For Target Strings In The Brute Force Results.
+"""
+
 from __future__ import annotations
 
 from string import ascii_letters
