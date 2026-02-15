@@ -1,1 +1,3 @@
 Hi! I am Vegarlf, an average person trying to learn programming. (very late to be doing so in my life, definitely.) I made this repo to track my progress over little projects I make as I learn languages. Dont expect anything good, all of these will be 10 line programs that I'd have written for fun or to understand a very specific topic. Hopefully, that changes soon, and my dumbass brain can actually start creating and contributing to the amazing world of programming.
+
+Created On: 14 February 2026
