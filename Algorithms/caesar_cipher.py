@@ -1,4 +1,7 @@
 """
+Caesar Cipher Encrypter, Decrpyter and Brute Forcer.
+"""
+"""
 Most Of The Code Is Self-Explanatory, But If You Need More Info, Please Read The Docstrings
 Most Of The Code Is Cloned From The Encrypt Function, But With A Negative Key To Decrypt
 Most Of The Code Is Cloned From The Algorithms Github Repo, But With The SearchString Function Added
@@ -229,6 +232,19 @@ def brute_force(input_string: str, alphabet: str | None = None) -> dict[int, str
     return brute_force_data
 
 def brute_force_dict_search(targetstr: str, datadict: dict,):
+    """
+    brute_force_dict_search
+    
+    :param targetstr: Description
+    :type targetstr: str
+    :param datadict: Description
+    :type datadict: dict
+
+    the function searches for the target string in the data dictionary 
+    and prints the key and value of any matches found, including perfect matches, 
+    case-insensitive matches, and partial matches. If no matches are found, 
+    it prints a message indicating that no matches were found.
+    """
     found_count = 0
     targetstrlist = targetstr.split(',')
     for key, value in datadict.items():
