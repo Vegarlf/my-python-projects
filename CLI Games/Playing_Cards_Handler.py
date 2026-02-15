@@ -3,7 +3,6 @@ import time
 import sys
 from colorama import Fore, Style, init
 
-
 # Initialize colorama
 init(autoreset=True)
 
