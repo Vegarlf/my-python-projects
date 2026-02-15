@@ -258,6 +258,7 @@ def brute_force_dict_search(targetstr: str, datadict: dict,):
                 found_count += 1
             elif targetstring.strip() in value:
                 print(f"Found Partial Match!\nKey: {key} | Match: '{value}' ")
+                found_count += 1
             elif targetstring.strip().lower() in value.lower():
                 print(f"Found Case Insensitive Partial Match!\nKey: {key} | Match: '{value}'")
                 found_count += 1
