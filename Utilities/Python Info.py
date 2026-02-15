@@ -1,30 +1,55 @@
-#---- Utilities for Python--------
+'''Utilities For Python'''
 
-#----------------------------------------Learning----------------------------------
-#list commands:
+"""THE ZEN OF PYTHON:----
+The Zen of Python, by Tim Peters
 
-#lst.append(x)        # add to end
-#lst.extend(iterable) # add many
-#lst.insert(i, x)     # add at index
-#lst.remove(x)        # remove first matching value
-#lst.pop()            # remove & return last
-#lst.pop(i)           # remove & return at index
-#lst.clear()          # empty list
-#lst.index(x)         # index of value (crashes if not found)
-#lst.count(x)         # count occurrences
-#lst.sort()           # sort in place
-#sort(Reverse = True) -- descending
-#sort(key = str.lower) -- case insensitive
-#lst.reverse()        # reverse in place
-#del lst[x]/del lst   # delete list, delete at index
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+"""
 
-#len(lst)             # length
-#sum(lst)             # sum numbers
-#min(lst), max(lst)   # min/max
-#x in lst             # membership
+
+# ----------------------------------------Learning----------------------------------
+# list commands:
+
+# lst.append(x)        # add to end
+# lst.extend(iterable) # add many
+# lst.insert(i, x)     # add at index
+# lst.remove(x)        # remove first matching value
+# lst.pop()            # remove & return last
+# lst.pop(i)           # remove & return at index
+# lst.clear()          # empty list
+# lst.index(x)         # index of value (crashes if not found)
+# lst.count(x)         # count occurrences
+# lst.sort()           # sort in place
+# sort(Reverse = True) -- descending
+# sort(key = str.lower) -- case insensitive
+# lst.reverse()        # reverse in place
+# del lst[x]/del lst   # delete list, delete at index
+
+# len(lst)             # length
+# sum(lst)             # sum numbers
+# min(lst), max(lst)   # min/max
+# x in lst             # membership
 
 
-#SETS---
+# SETS---
 # .update() adds iterable item to other iterable item, changes original set, excludes duplicate items
 # .union() joins sets with other data types as well as sets, and returns set, excludes duplicate items, returns new set
 # | -- union  -- cant use with other data types, or *
@@ -39,31 +64,29 @@
 # issuperset() returns wheter set is proper superset of another or >/>=
 
 
+# dictionaries:
 
-
-#dictionaries:
-
-#dct = {
+# dct = {
 #    "name": "Daivik",
 #    "age": 14,
 #    "scores": [88, 91]
-#}
-#dct["name"] = "D"     # change key
-#age = dct["age"]      # access key
+# }
+# dct["name"] = "D"     # change key
+# age = dct["age"]      # access key
 
-#dct["city"] = "Delhi"   # add new key
-#safe accesss - avoid keyerror:
-#dct.get("grade")            # None if missing
-#dct.get("grade", "N/A")     # default if missing set to N/A
-#d.keys()      # view of keys
-#d.values()    # view of values
-#d.items()     # (key, value) pairs
-#d.update({"a": 1, "b": 2})   # merge/update
-#d.pop("a")                   # remove key, return value
-#d.popitem()                  # remove last inserted pair
-#d.clear()                    # empty dict
-#"k" in d                     # membership checks keys
-#len(d)                        # number of keys
+# dct["city"] = "Delhi"   # add new key
+# safe accesss - avoid keyerror:
+# dct.get("grade")            # None if missing
+# dct.get("grade", "N/A")     # default if missing set to N/A
+# d.keys()      # view of keys
+# d.values()    # view of values
+# d.items()     # (key, value) pairs
+# d.update({"a": 1, "b": 2})   # merge/update
+# d.pop("a")                   # remove key, return value
+# d.popitem()                  # remove last inserted pair
+# d.clear()                    # empty dict
+# "k" in d                     # membership checks keys
+# len(d)                        # number of keys
 
 '''
 Escape Characters:
@@ -180,9 +203,9 @@ HEAL = auto()
 RUN = auto()
 '''
 
-#--------------------FILE I/O COMMANDS------------------------
-#open("filename", "mode")
-#mode indicators:
+# --------------------FILE I/O COMMANDS------------------------
+# open("filename", "mode")
+# mode indicators:
 # 'r'  --- read ---- opens file to read, error if doesnt exist
 # 'w'  --- write ---- opens file to write NOTE: WIPES THE FILE CLEAN FIRST
 # 'a'  --- append ---- opens file to write. adds content to the end
