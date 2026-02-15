@@ -1,5 +1,5 @@
 """
-Caesar Cipher Encrypter, Decrpyter and Brute Forcer.
+Caesar Cipher Encrypter, Decrypter and Brute Forcer.
 Most Of The Code Is Cloned From The Algorithms Github Repo, But With The brute_force_dict_search() Function Added
 To Search For Target Strings In The Brute Force Results.
 """
@@ -12,6 +12,7 @@ Most Of The Code Is Cloned From The Encrypt Function, But With A Negative Key To
 """
 
 from string import ascii_letters
+
 
 def encrypt(input_string: str, key: int, alphabet: str | None = None) -> str:
     """
@@ -223,7 +224,7 @@ def brute_force(input_string: str, alphabet: str | None = None) -> dict[int, str
     alpha = alphabet or ascii_letters
 
     # To store data on all the combinations
-    brute_force_data = {}
+    brute_force_data: dict[int, str] = {}
 
     # Cycle through each combination
     for key in range(1, len(alpha) + 1):
@@ -232,26 +233,32 @@ def brute_force(input_string: str, alphabet: str | None = None) -> dict[int, str
 
     return brute_force_data
 
-def brute_force_dict_search(targetstr: str, datadict: dict,):
+
+def brute_force_dict_search(
+    targetstr: str,
+    datadict: dict[int, str],
+):
     """
     brute_force_dict_search
-    
+
     :param targetstr: Description
     :type targetstr: str
     :param datadict: Description
     :type datadict: dict
 
-    the function searches for the target string in the data dictionary 
-    and prints the key and value of any matches found, including perfect matches, 
-    case-insensitive matches, and partial matches. If no matches are found, 
+    the function searches for the target string in the data dictionary
+    and prints the key and value of any matches found, including perfect matches,
+    case-insensitive matches, and partial matches. If no matches are found,
     it prints a message indicating that no matches were found.
     """
     found_count = 0
-    targetstrlist = targetstr.split(',')
+    targetstrlist = targetstr.split(",")
     for key, value in datadict.items():
         for targetstring in targetstrlist:
             if targetstring.strip() == value:
-                print("Found Perfect Match!", f"Key: {key} | Match: '{value}'", sep= '\n')
+                print(
+                    "Found Perfect Match!", f"Key: {key} | Match: '{value}'", sep="\n"
+                )
                 found_count += 1
             elif targetstring.strip().lower() == value.lower():
                 print(f"Found Case Insensitive Match!\nKey: {key} | Match: '{value}'")
@@ -260,7 +267,9 @@ def brute_force_dict_search(targetstr: str, datadict: dict,):
                 print(f"Found Partial Match!\nKey: {key} | Match: '{value}' ")
                 found_count += 1
             elif targetstring.strip().lower() in value.lower():
-                print(f"Found Case Insensitive Partial Match!\nKey: {key} | Match: '{value}'")
+                print(
+                    f"Found Case Insensitive Partial Match!\nKey: {key} | Match: '{value}'"
+                )
                 found_count += 1
     if found_count == 0:
         print(f"No Matches Found :(( ...")
@@ -270,34 +279,30 @@ if __name__ == "__main__":
         print(f"\n{'-' * 10}\n Menu\n{'-' * 10}")
         print(*["1.Encrypt", "2.Decrypt", "3.BruteForce", "4.Quit"], sep="\n")
 
-        # get user input
         choice = input("\nWhat would you like to do?: ").strip() or "4"
-
-        # run functions based on what the user chose
-        if choice not in ("1", "2", "3", "4"):
-            print("Invalid choice, please enter a valid choice")
-        elif choice == "1":
-            input_string = input("Please enter the string to be encrypted: ")
-            key = int(input("Please enter off-set: ").strip())
-
-            print(encrypt(input_string, key))
-        elif choice == "2":
-            input_string = input("Please enter the string to be decrypted: ")
-            key = int(input("Please enter off-set: ").strip())
-
-            print(decrypt(input_string, key))
-        elif choice == "3":
-            input_string = input("Please enter the string to be decrypted: ")
-            brute_force_data = brute_force(input_string)
-            for key, value in brute_force_data.items():
-                print(f"Key: {key} | Message: {value}")
-            while True:
-                targetstr = input("Enter Target Strings To Search For Seperated By Commas If, or Enter If None:  ").strip() or 'none'
-                if targetstr.strip().lower() != "none":
-                    brute_force_dict_search(targetstr, brute_force_data)
-                else:
-                    break
-
-        elif choice == "4":
-            print("Goodbye.")
-            break
+        
+        match choice:
+            case "1":
+                input_string = input("Please enter the string to be encrypted: ")
+                key = int(input("Please enter off-set: ").strip())
+                print(encrypt(input_string, key))
+            case "2":
+                input_string = input("Please enter the string to be decrypted: ")
+                key = int(input("Please enter off-set: ").strip())
+                print(decrypt(input_string, key))
+            case "3":
+                input_string = input("Please enter the string to be decrypted: ")
+                brute_force_data = brute_force(input_string)
+                for key, value in brute_force_data.items():
+                    print(f"Key: {key} | Message: {value}")
+                while True:
+                    targetstr = input("Enter Target Strings To Search For Seperated By Commas If, or Enter If None:  ").strip() or "none"
+                    if targetstr.strip().lower() != "none":
+                        brute_force_dict_search(targetstr, brute_force_data)
+                    else:
+                        break
+            case "4":
+                print("Goodbye.")
+                break
+            case _:
+                print("Invalid choice, please enter a valid choice")
