@@ -208,3 +208,4 @@ __marimo__/
 .vscode
 .mypy_cache
 Utilities
+.mypy_cache
