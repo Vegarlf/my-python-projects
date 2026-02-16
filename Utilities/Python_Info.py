@@ -24,6 +24,25 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 """
 
+#--------------------------Fun Keywords-------------------------------------
+# assert, match case
+# yield - to research
+#comment keywords:
+'''
+#TODO
+#FIXME, #BUG
+#HACK
+#NOTE, #INFO:
+#XXX
+
+with better comments:
+# ! -  bright red, critical alerts
+# ? - blue, questions or research
+# TODO: bright orange
+# * light green, highlighted imp info
+# // used for deprecated functions, etc.
+
+'''
 
 # ----------------------------------------Learning----------------------------------
 # list commands:
@@ -67,8 +86,8 @@ Namespaces are one honking great idea -- let's do more of those!
 # dictionaries:
 
 # dct = {
-#    "name": "Daivik",
-#    "age": 14,
+#    "name": "John",
+#    "age": 999,
 #    "scores": [88, 91]
 # }
 # dct["name"] = "D"     # change key
@@ -163,6 +182,7 @@ evaluated left to right
 dunder methods -- auto applied if defined:
 __str__(self): auto applied if defined, used to print meaningful info
 __repr__(self): prints string useful for debugging, as the form : class(attributes)
+__call__(self) : to make objects callable
 __add__(left side value(self), right side value): auto method for '+' between class objects. can be coded to return new class object, etc. 
 __sub__(left, right)
 __mul__(left, right)
