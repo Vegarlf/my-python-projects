@@ -205,4 +205,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
-Utilities/Python_Info.py
+.vscode
+.mypy_cache
+Utilities
